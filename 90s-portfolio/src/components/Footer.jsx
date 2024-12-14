@@ -1,3 +1,4 @@
+import RetroButton from './RetroButton';
 import './styles/footer.css';
 
 function Footer() {
@@ -5,15 +6,15 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="social-links">
-          <a href="https://github.com/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
+          <RetroButton href="https://github.com/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
             GitHub
-          </a>
-          <a href="https://linkedin.com/in/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
+          </RetroButton>
+          <RetroButton href="https://linkedin.com/in/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
             LinkedIn
-          </a>
-          <a href="https://twitter.com/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
+          </RetroButton>
+          <RetroButton href="https://twitter.com/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
             Twitter
-          </a>
+          </RetroButton>
         </div>
         <div className="footer-credits">
           <p>Created with React and nostalgia.</p>

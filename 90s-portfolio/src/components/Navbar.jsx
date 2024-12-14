@@ -1,24 +1,21 @@
+import RetroButton from './RetroButton'
 import './styles/navbar.css'
 
-function Navbar() {
+export default function Navbar() {
   return (
     <nav className="navbar">
+      <div className="nav-brand">Cameron Boyle</div>
       <ul className="nav-list">
         <li className="nav-item">
-          <a href="#home" className="nav-link">Home</a>
+          <RetroButton href="#about" className="nav-link">About</RetroButton>
         </li>
         <li className="nav-item">
-          <a href="#about" className="nav-link">About</a>
+          <RetroButton href="#projects" className="nav-link">Projects</RetroButton>
         </li>
         <li className="nav-item">
-          <a href="#projects" className="nav-link">Projects</a>
-        </li>
-        <li className="nav-item">
-          <a href="#contact" className="nav-link">Contact</a>
+          <RetroButton href="#contact" className="nav-link">Contact</RetroButton>
         </li>
       </ul>
     </nav>
   )
 }
-
-export default Navbar

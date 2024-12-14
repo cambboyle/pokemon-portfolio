@@ -1,0 +1,48 @@
+.retro-button {
+  font-family: 'Press Start 2P', monospace;
+  padding: 0.5rem 1rem;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.1s ease;
+}
+
+/* Default button style (not nav-link) */
+.retro-button:not(.nav-link) {
+  border: 2px solid #000;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #d8d8d8 100%);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.retro-button:not(.nav-link):hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.retro-button:not(.nav-link):active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Nav link specific styles */
+.retro-button.nav-link {
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.retro-button.nav-link:hover {
+  color: #2a75bb;
+}
+
+.retro-button.nav-link::before {
+  content: '▶';
+  position: absolute;
+  left: -1rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.retro-button.nav-link:hover::before {
+  opacity: 1;
+}

@@ -1,3 +1,4 @@
+import RetroButton from './RetroButton';
 import "./styles/hero.css";
 
 export default function Hero() {
@@ -39,12 +40,12 @@ export default function Hero() {
         </div>
       </div>
       <div className="cta-buttons">
-        <a href="#projects" className="cta-button pokedex-btn">
+        <RetroButton href="#projects" className="cta-button pokedex-btn">
           Explore My Pokédex
-        </a>
-        <a href="#about" className="cta-button stats-btn">
+        </RetroButton>
+        <RetroButton href="#about" className="cta-button stats-btn">
           View Trainer Stats
-        </a>
+        </RetroButton>
       </div>
     </div>
   );

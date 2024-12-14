@@ -1,0 +1,71 @@
+.retro-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    color: #000;
+    background: #f8f8f8;
+    border: 3px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 #000;
+    transition: all 0.2s ease;
+    position: relative;
+    text-align: center;
+}
+
+.retro-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+    background: #fff;
+}
+
+.retro-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+    background: #e8e8e8;
+}
+
+/* Specific styles for nav links */
+.nav-link.retro-button {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+}
+
+/* Specific styles for CTA buttons */
+.cta-button.retro-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.pokedex-btn.retro-button {
+    background: #ff5555;
+    color: #fff;
+}
+
+.pokedex-btn.retro-button:hover {
+    background: #ff6666;
+}
+
+.stats-btn.retro-button {
+    background: #5555ff;
+    color: #fff;
+}
+
+.stats-btn.retro-button:hover {
+    background: #6666ff;
+}
+
+/* Social link buttons in footer */
+.social-link.retro-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+    background: #333;
+    color: #fff;
+}
+
+.social-link.retro-button:hover {
+    background: #444;
+}

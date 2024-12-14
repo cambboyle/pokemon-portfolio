@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
+import SoundToggle from './components/SoundToggle'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -15,6 +16,7 @@ function App() {
         <Navbar />
         <Hero />
         <Footer />
+        <SoundToggle />
       </div>
     </>
   )
