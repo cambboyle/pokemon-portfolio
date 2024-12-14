@@ -55,6 +55,13 @@
     color: #4CAF50;
 }
 
+/* Footer Sound Toggle */
+.footer-sound {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
 @media (max-width: 768px) {
     .social-links {
         flex-direction: column;

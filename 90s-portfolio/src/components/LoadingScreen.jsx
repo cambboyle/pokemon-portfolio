@@ -21,21 +21,20 @@ export default function LoadingScreen({ onComplete }) {
       document.removeEventListener('click', handleStart);
     };
 
-    // Nintendo style staged loading
     const timers = [];
     let totalDelay = 0;
 
     const stages = [
-      { delay: 500 },  // Initial pause
-      { delay: 2000 },  // Nintendo logo drop
-      { delay: 1500 },  // Delay before sound
-      { delay: 0 }      // Press Start appears
+      { delay: 500 },
+      { delay: 2000 },
+      { delay: 1500 },
+      { delay: 0 }
     ];
 
     stages.forEach((stage, index) => {
       const timer = setTimeout(() => {
         setStage(index + 1);
-        if (index === 1) {  // Play sound at stage 2
+        if (index === 1) {
           soundManager.playSound('GAMEBOY_START');
         }
         if (index === stages.length - 1) {
@@ -62,7 +61,7 @@ export default function LoadingScreen({ onComplete }) {
       <div className="gameboy-screen">
         {stage >= 1 && (
           <div className={`nintendo-logo ${stage >= 2 ? 'dropped' : ''}`}>
-            CAMTENDO
+            CAMERON'S
           </div>
         )}
         {stage >= 3 && (

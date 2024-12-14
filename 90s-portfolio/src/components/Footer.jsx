@@ -1,4 +1,5 @@
 import RetroButton from './RetroButton';
+import SoundToggle from './SoundToggle';
 import './styles/footer.css';
 
 function Footer() {
@@ -19,6 +20,9 @@ function Footer() {
         <div className="footer-credits">
           <p>Created with React and nostalgia.</p>
           <p className="save-text"> Game Saved! Last updated: {new Date().toLocaleDateString()}</p>
+        </div>
+        <div className="footer-sound">
+          <SoundToggle />
         </div>
       </div>
     </footer>

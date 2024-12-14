@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
-import SoundToggle from './components/SoundToggle'
+import TechTeam from './components/TechTeam'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -15,8 +15,8 @@ function App() {
       <div className={`app ${!loading ? 'loaded' : ''}`}>
         <Navbar />
         <Hero />
+        <TechTeam />
         <Footer />
-        <SoundToggle />
       </div>
     </>
   )

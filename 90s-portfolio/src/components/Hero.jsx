@@ -4,48 +4,65 @@ import "./styles/hero.css";
 export default function Hero() {
   return (
     <div className="hero-container">
-      <div className="hero-welcome">
-        <h1>Welcome to Cameron Boyle&apos;s Trainer HQ!</h1>
-        <h2>Full-Stack Developer | Pokémon Enthusiast | Retro Web Designer</h2>
-      </div>
-      <div className="hero-content">
-        <div className="pixel-art-container">
-          <div className="pixel-art-placeholder">
-            {/* Placeholder for pixel art image */}
-            <div className="placeholder-text">Pixel Art Coming Soon</div>
+      <div className="trainer-card">
+        <div className="trainer-card-header">
+          <span className="trainer-id">ID.12345</span>
+          <span className="trainer-name">Cameron Boyle</span>
+        </div>
+        <div className="trainer-card-content">
+          <div className="trainer-image">
+            <img 
+              src="https://play.pokemonshowdown.com/sprites/trainers/yellow.png"
+              alt="Trainer Sprite"
+              className="trainer-sprite"
+            />
+          </div>
+          <div className="trainer-info">
+            <div className="trainer-title">Full-Stack Developer</div>
+            <div className="trainer-info-columns">
+              <div className="trainer-info-left">
+                <div className="trainer-stats">
+                  <div className="stat-row">
+                    <span className="stat-label">Region:</span>
+                    <span className="stat-value">Web Development</span>
+                  </div>
+                  <div className="stat-row">
+                    <span className="stat-label">Specialty:</span>
+                    <span className="stat-value">React & TypeScript</span>
+                  </div>
+                  <div className="stat-row">
+                    <span className="stat-label">Quest:</span>
+                    <span className="stat-value">Building Amazing UIs</span>
+                  </div>
+                </div>
+              </div>
+              <div className="trainer-info-right">
+                <div className="trainer-stats">
+                  <div className="stat-row">
+                    <span className="stat-label">Experience:</span>
+                    <span className="stat-value">5+ Years</span>
+                  </div>
+                  <div className="stat-row">
+                    <span className="stat-label">Location:</span>
+                    <span className="stat-value">Remote</span>
+                  </div>
+                  <div className="stat-row">
+                    <span className="stat-label">Languages:</span>
+                    <span className="stat-value">EN, JS, TS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="pokedex-card">
-          <div className="pokedex-header">
-            <span className="pokemon-number">#001</span>
-            <span className="pokemon-name">Cameron Boyle</span>
-          </div>
-          <div className="pokedex-description">
-            <p>A Junior Dev Pokémon. Specializes in TypeScript, React, and UX Design.</p>
-            <p>Known to explore the web development wilderness.</p>
-          </div>
-          <div className="moves-section">
-            <h3>Moves:</h3>
-            <ul className="moves-list">
-              <li className="move">
-                <span className="move-name">React.js</span>
-                <span className="move-effect critical">→ Critical Hit!</span>
-              </li>
-              <li className="move">
-                <span className="move-name">Node.js</span>
-                <span className="move-effect sturdy">→ Sturdy Defense!</span>
-              </li>
-            </ul>
-          </div>
+        <div className="trainer-card-footer">
+          <RetroButton href="#projects" className="cta-button pokedex-btn">
+            View Projects
+          </RetroButton>
+          <RetroButton href="#about" className="cta-button stats-btn">
+            About Me
+          </RetroButton>
         </div>
-      </div>
-      <div className="cta-buttons">
-        <RetroButton href="#projects" className="cta-button pokedex-btn">
-          Explore My Pokédex
-        </RetroButton>
-        <RetroButton href="#about" className="cta-button stats-btn">
-          View Trainer Stats
-        </RetroButton>
       </div>
     </div>
   );
