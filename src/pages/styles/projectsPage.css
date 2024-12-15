@@ -388,7 +388,7 @@
   }
 
   .pokedex-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .pokedex-left,

@@ -271,3 +271,26 @@
     height: 40px;
   }
 }
+
+@media screen and (max-width: 560px) {
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .pokemon-info {
+    width: 100%;
+  }
+
+  .type-badges {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+
+  .type-badge {
+    padding: 0.4rem 0.8rem;
+  }
+}

@@ -91,9 +91,9 @@ footer {
 }
 
 .tech-team-section {
-  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 0.5rem;
 }
 
 .tech-team-section h2 {
