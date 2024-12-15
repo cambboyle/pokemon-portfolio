@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import './styles/contactPage.css';
 
+// Add debug logging
+console.log('All env variables:', import.meta.env);
+console.log('Public Key:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -32,9 +36,24 @@ const ContactPage = () => {
       }
     }, 50);
 
+    // Debug EmailJS initialization
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    console.log('Initializing with key:', PUBLIC_KEY);
+    
+    if (!PUBLIC_KEY) {
+      console.error('Public key is missing!');
+      setSystemStats(prev => ({
+        ...prev,
+        status: 'CONFIG ERROR'
+      }));
+      return;
+    }
+
     // Initialize EmailJS
     try {
-      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+      console.log('Attempting to initialize EmailJS...');
+      emailjs.init(PUBLIC_KEY);
+      console.log('EmailJS initialized successfully');
       setIsEmailJSReady(true);
       setSystemStats(prev => ({
         ...prev,
