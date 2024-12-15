@@ -1,6 +1,5 @@
-import React from 'react';
 import { getTechSprite, getTechType, getTechLevel } from '../utils/techIcons';
-import './styles/techTeam.css';
+import './styles/TechTeam.css';
 
 const skills = [
   { name: "React", category: "Framework" },
