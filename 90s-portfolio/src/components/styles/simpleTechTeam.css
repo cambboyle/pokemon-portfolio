@@ -1,0 +1,90 @@
+.simple-tech-team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.simple-pokemon-card {
+  width: 130px;
+  height: auto;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #E8F8F8;
+  border: 2px solid #2F4F4F;
+  box-shadow: 4px 4px 0 #1A2B2A;
+  padding: 1rem 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.simple-pokemon-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1A2B2A;
+}
+
+.simple-tech-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.simple-tech-name {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #2F4F4F;
+  text-align: center;
+}
+
+.simple-tech-level {
+  font-size: 0.65rem;
+  color: #4A90E2;
+  font-weight: bold;
+}
+
+.simple-tech-type {
+  font-size: 0.6rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+/* Pokemon type colors */
+.simple-tech-type[data-type="fire"] { background-color: #F08030; }
+.simple-tech-type[data-type="electric"] { background-color: #F8D030; }
+.simple-tech-type[data-type="grass"] { background-color: #78C850; }
+.simple-tech-type[data-type="water"] { background-color: #6890F0; }
+.simple-tech-type[data-type="fairy"] { background-color: #EE99AC; }
+.simple-tech-type[data-type="ghost"] { background-color: #705898; }
+
+@media screen and (max-width: 768px) {
+  .simple-tech-team {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .simple-pokemon-card {
+    width: 110px;
+    min-height: 90px;
+    padding: 0.8rem 0.4rem;
+  }
+
+  .simple-tech-name {
+    font-size: 0.6rem;
+  }
+
+  .simple-tech-level {
+    font-size: 0.55rem;
+  }
+
+  .simple-tech-type {
+    font-size: 0.5rem;
+  }
+}
