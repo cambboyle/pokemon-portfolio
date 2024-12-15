@@ -1,9 +1,9 @@
 // Sound effect URLs - using short, optimized sounds
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.DEV ? '' : '/pokemon-portfolio';
 const SOUNDS = {
-  GAMEBOY_START: `${BASE_URL}sounds/gameboy-start.mp3`,
-  MENU_SELECT: `${BASE_URL}sounds/menu-select.mp3`,
-  MENU_OPEN: `${BASE_URL}sounds/menu-open.mp3`,
+  GAMEBOY_START: `${BASE_URL}/sounds/gameboy-start.mp3`,
+  MENU_SELECT: `${BASE_URL}/sounds/menu-select.mp3`,
+  MENU_OPEN: `${BASE_URL}/sounds/menu-open.mp3`,
 };
 
 // Volume levels for different sound types
@@ -31,12 +31,17 @@ class SoundManager {
     
     for (const [key, url] of Object.entries(SOUNDS)) {
       try {
+        console.log(`Loading sound: ${url}`);
         const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
         this.sounds.set(key, audioBuffer);
+        console.log(`Successfully loaded sound: ${key}`);
       } catch (err) {
-        console.log(`Failed to load sound ${key}:`, err);
+        console.error(`Failed to load sound ${key} from ${url}:`, err);
       }
     }
   }
