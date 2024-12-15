@@ -21,6 +21,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
 
+      - name: Debug - Check Environment Variables
+        run: |
+          echo "Checking if env variables are set (will show true/false):"
+          echo "VITE_EMAILJS_PUBLIC_KEY set: ${{ env.VITE_EMAILJS_PUBLIC_KEY != '' }}"
+          echo "VITE_EMAILJS_SERVICE_ID set: ${{ env.VITE_EMAILJS_SERVICE_ID != '' }}"
+          echo "VITE_EMAILJS_TEMPLATE_ID set: ${{ env.VITE_EMAILJS_TEMPLATE_ID != '' }}"
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
