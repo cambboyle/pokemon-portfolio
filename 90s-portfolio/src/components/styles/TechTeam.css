@@ -1,7 +1,6 @@
 .tech-team-container {
   padding: 2rem;
   background: #f0f0f0;
-  border-radius: 8px;
   border: 4px solid #2c3e50;
   margin: 2rem 0;
 }
@@ -9,7 +8,6 @@
 .tech-team-inner {
   max-width: 1200px;
   margin: 0 auto;
-  
 }
 
 .tech-team-title {
@@ -20,119 +18,110 @@
   color: #333;
 }
 
-.pokemon-team {
+.tech-team {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
-  max-width: 900px;
+  padding: 1rem;
+  margin: 2rem 0;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.pokemon-slot {
-  background: #fff;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-}
-
-.pokemon-slot:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.tech-info {
+.pokemon-card {
+  width: 150px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  background: #E8F8F8;
+  border: 2px solid #2F4F4F;
+  box-shadow: 4px 4px 0 #1A2B2A;
+  padding: 1rem 0.5rem;
+  transition: transform 0.2s ease;
 }
 
-.tech-sprite {
-  width: 96px;
-  height: 96px;
+.pokemon-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1A2B2A;
+}
+
+.pokemon-sprite {
+  width: 80px;
+  height: 80px;
   image-rendering: pixelated;
 }
 
-.tech-details {
-  text-align: center;
-  width: 100%;
-}
-
-.tech-name {
+.pokemon-name {
+  margin-top: 0.5rem;
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-}
-
-.level {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.8rem;
-  color: #666;
-  margin: 0.25rem 0;
-}
-
-.type-badges {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin: 0.5rem 0;
-}
-
-.type-badge {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
   font-size: 0.7rem;
-  font-family: 'Press Start 2P', cursive;
-  text-transform: uppercase;
+  color: #2F4F4F;
+  text-align: center;
+}
+
+.tech-level {
+  margin-top: 0.3rem;
+  font-size: 0.6rem;
+  color: #4A90E2;
+  font-weight: bold;
+}
+
+.tech-type {
+  margin-top: 0.3rem;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  color: white;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
 }
 
 /* Pokemon type colors */
-.type-normal { background-color: #A8A878; color: white; }
-.type-fire { background-color: #F08030; color: white; }
-.type-fighting { background-color: #C03028; color: white; }
-.type-water { background-color: #6890F0; color: white; }
-.type-flying { background-color: #A890F0; color: white; }
-.type-grass { background-color: #78C850; color: white; }
-.type-poison { background-color: #A040A0; color: white; }
-.type-electric { background-color: #F8D030; color: black; }
-.type-ground { background-color: #E0C068; color: white; }
-.type-psychic { background-color: #F85888; color: white; }
-.type-rock { background-color: #B8A038; color: white; }
-.type-ice { background-color: #98D8D8; color: white; }
-.type-bug { background-color: #A8B820; color: white; }
-.type-dragon { background-color: #7038F8; color: white; }
-.type-ghost { background-color: #705898; color: white; }
-.type-dark { background-color: #705848; color: white; }
-.type-steel { background-color: #B8B8D0; color: white; }
-.type-fairy { background-color: #EE99AC; color: white; }
+.tech-type[data-type="fire"] { background-color: #F08030; }
+.tech-type[data-type="electric"] { background-color: #F8D030; }
+.tech-type[data-type="grass"] { background-color: #78C850; }
+.tech-type[data-type="water"] { background-color: #6890F0; }
+.tech-type[data-type="fairy"] { background-color: #EE99AC; }
+.tech-type[data-type="ghost"] { background-color: #705898; }
 
-.hp-bar-container {
-  width: 100%;
-  height: 8px;
-  background: #ddd;
-  border-radius: 4px;
-  margin-top: 0.5rem;
-}
-
-.hp-bar {
-  height: 100%;
-  background: #00ff00;
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .pokemon-team {
-    grid-template-columns: repeat(2, 1fr);
+@media screen and (max-width: 1200px) {
+  .tech-team {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
   }
 }
 
-@media (max-width: 480px) {
-  .pokemon-team {
+@media screen and (max-width: 768px) {
+  .tech-team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .pokemon-card {
+    width: 120px;
+    height: 150px;
+    padding: 0.8rem 0.4rem;
+  }
+
+  .pokemon-sprite {
+    width: 60px;
+    height: 60px;
+  }
+
+  .pokemon-name {
+    font-size: 0.6rem;
+  }
+
+  .tech-level,
+  .tech-type {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tech-team {
     grid-template-columns: 1fr;
   }
 }

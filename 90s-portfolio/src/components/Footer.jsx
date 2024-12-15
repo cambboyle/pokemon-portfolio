@@ -7,14 +7,17 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="social-links">
-          <RetroButton href="https://github.com/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
+          <RetroButton href="https://github.com/cambboyle" className="social-link" target="_blank" rel="noopener noreferrer">
             GitHub
           </RetroButton>
-          <RetroButton href="https://linkedin.com/in/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
+          <RetroButton href="https://www.codedex.io/@cambboyle301" className="social-link" target="_blank" rel="noopener noreferrer">
+            Codédex
+          </RetroButton>
+          <RetroButton href="www.linkedin.com/in/cbb00" className="social-link" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </RetroButton>
-          <RetroButton href="https://twitter.com/yourusername" className="social-link" target="_blank" rel="noopener noreferrer">
-            Twitter
+          <RetroButton href="https://x.com/cambboyle" className="social-link" target="_blank" rel="noopener noreferrer">
+            X
           </RetroButton>
         </div>
         <div className="footer-credits">

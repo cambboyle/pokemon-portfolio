@@ -26,6 +26,12 @@
     color: #000;
 }
 
+.nav-brand-link {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .nav-list {
     list-style: none;
     padding: 0;

@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
-import soundManager from '../utils/sounds';
+import React from 'react';
 import { getTechSprite, getTechType, getTechLevel } from '../utils/techIcons';
-import './styles/TechTeam.css';
+import './styles/techTeam.css';
 
 const skills = [
   { name: "React", category: "Framework" },
@@ -21,45 +20,24 @@ const formatCategory = (category) => {
 };
 
 const TechTeam = () => {
-  useEffect(() => {
-    const slots = document.querySelectorAll('.pokemon-slot');
-    slots.forEach(slot => {
-      slot.addEventListener('mouseenter', () => {
-        soundManager.playSound('MENU_SELECT');
-      });
-    });
-  }, []);
-
   return (
-    <div className="tech-team-container">
-      <div className="tech-team-inner">
-        <h2 className="tech-team-title">Tech Team</h2>
-        <div className="pokemon-team">
-          {skills.map((skill) => (
-            <div key={skill.name} className="pokemon-slot" data-type={getTechType(skill.category)}>
-              <div className="tech-info">
-                <img 
-                  src={getTechSprite(skill.name)} 
-                  alt={skill.name}
-                  className="tech-sprite"
-                />
-                <div className="tech-details">
-                  <h3 className="tech-name">{skill.name}</h3>
-                  <div className="level">Lv. {getTechLevel(skill.name)}</div>
-                  <div className="type-badges">
-                    <span className={`type-badge type-${getTechType(skill.category).toLowerCase()}`}>
-                      {formatCategory(skill.category)}
-                    </span>
-                  </div>
-                  <div className="hp-bar-container">
-                    <div className="hp-bar" style={{ width: '100%' }}></div>
-                  </div>
-                </div>
-              </div>
+    <div className="tech-team">
+      {skills.map((skill) => (
+        <div key={skill.name} className="pokemon-card" data-type={getTechType(skill.category)}>
+          <img 
+            src={getTechSprite(skill.name)} 
+            alt={skill.name}
+            className="pokemon-sprite"
+          />
+          <div className="pokemon-name">
+            {skill.name}
+            <div className="tech-level">Lv.{getTechLevel(skill.name)}</div>
+            <div className="tech-type" data-type={getTechType(skill.category)}>
+              {formatCategory(skill.category)}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };

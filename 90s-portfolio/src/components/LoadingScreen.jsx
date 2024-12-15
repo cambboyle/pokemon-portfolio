@@ -25,10 +25,11 @@ export default function LoadingScreen({ onComplete }) {
     let totalDelay = 0;
 
     const stages = [
-      { delay: 500 },
-      { delay: 2000 },
-      { delay: 1500 },
-      { delay: 0 }
+      { delay: 500 },  // Initial delay
+      { delay: 2000 }, // Nintendo logo drop
+      { delay: 1500 }, // Boot text fade in
+      { delay: 1000 }, // Line animation
+      { delay: 500 }   // Loading dots
     ];
 
     stages.forEach((stage, index) => {
@@ -57,23 +58,23 @@ export default function LoadingScreen({ onComplete }) {
   if (!visible) return null;
 
   return (
-    <div className={`loading-screen ${stage >= 4 ? 'ready' : ''}`}>
-      <div className="gameboy-screen">
-        {stage >= 1 && (
-          <div className={`nintendo-logo ${stage >= 2 ? 'dropped' : ''}`}>
-            CAMERON'S
+    <div className={`loading-screen ${stage === 4 ? 'ready' : ''}`}>
+      <div className="gameboy-boot">
+        <div className="gameboy-screen">
+          <div className={`nintendo-logo ${stage >= 1 ? 'visible' : ''}`}>Cameron&apos;s Portfolio</div>
+          <div className={`boot-text ${stage >= 2 ? 'visible' : ''}`}>
+            <div className="copyright"> 2000</div>
           </div>
-        )}
-        {stage >= 3 && (
-          <div className="gameboy-logo">
-            PORTFOLIO
+          <div className={`boot-line ${stage >= 3 ? 'visible' : ''}`}></div>
+          <div className={`loading-dots ${stage >= 4 ? 'visible' : ''}`}>
+            <span className="dot">.</span>
+            <span className="dot">.</span>
+            <span className="dot">.</span>
           </div>
-        )}
-        {stage >= 4 && (
-          <div className="press-start">
-            PRESS START
+          <div className={`press-enter ${stage >= 4 ? 'visible' : ''}`}>
+            PRESS ENTER
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
