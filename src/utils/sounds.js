@@ -1,8 +1,9 @@
 // Sound effect URLs - using short, optimized sounds
+const BASE_URL = import.meta.env.BASE_URL;
 const SOUNDS = {
-  GAMEBOY_START: '/sounds/gameboy-start.mp3',
-  MENU_SELECT: '/sounds/menu-select.mp3',
-  MENU_OPEN: '/sounds/menu-open.mp3',
+  GAMEBOY_START: `${BASE_URL}sounds/gameboy-start.mp3`,
+  MENU_SELECT: `${BASE_URL}sounds/menu-select.mp3`,
+  MENU_OPEN: `${BASE_URL}sounds/menu-open.mp3`,
 };
 
 // Volume levels for different sound types
