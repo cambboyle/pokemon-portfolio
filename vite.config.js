@@ -6,12 +6,6 @@ export default defineConfig({
   base: '/pokemon-portfolio/',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: true,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
+    assetsDir: 'assets'
   }
 })
